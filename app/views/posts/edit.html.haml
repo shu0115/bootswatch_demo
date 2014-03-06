@@ -1,7 +1,4 @@
-%h1 Editing post
-
-= render 'form'
-
-= link_to 'Show', @post
-\|
-= link_to 'Back', posts_path
+- model_class = Post
+.page-header
+  %h1=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human, :default => "Edit #{model_class.model_name.human}")
+= render :partial => "form"
